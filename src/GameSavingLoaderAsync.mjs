@@ -7,7 +7,10 @@ export default class GameSavingLoaderAsync {
         let res1 = await read()
         let res2 = await json(res1)
         res2 = JSON.parse(res2)
-        console.log(res2)
-        return res2
+        this.id = res2.id
+        this.created = res2.created
+        this.userInfo = res2.userInfo
+        console.log(this)
+        return this
     }
 }

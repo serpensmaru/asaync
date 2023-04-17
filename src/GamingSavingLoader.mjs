@@ -7,8 +7,11 @@ export default class GameSavingLoader {
         return json(res)
     }).then((result) => {
         let res_obj = JSON.parse(result)
-        console.log(res_obj)
-        return res_obj
+        this.id = res_obj.id
+        this.created = res_obj.created
+        this.userInfo = res_obj.userInfo
+        console.log(this)
+        return this
     })
   }
 }
