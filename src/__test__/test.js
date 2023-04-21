@@ -1,12 +1,22 @@
-import GameSavingLoader from "../GamingSavingLoader.mjs";
-import GameSavingLoaderAsync from "../GameSavingLoaderAsync.mjs";
+import GameSavingLoader from "../GamingSavingLoader";
+import GameSavingLoaderAsync from "../GameSavingLoaderAsync";
 
 
-test("test GameSaving", () => {
-    let objGame = new GameSavingLoaderAsync().load()
-    expect(objGame.id).toBe(9);
-    expect(objGame.created).toBe(1546300800);
-    expect(objGame.userInfo.name).toBe("Hitman");
+test("test GameSavingLoaderAsync", async () => {
+    let objGame = new GameSavingLoaderAsync()
+    let res = await objGame.load()
+    expect(res.id).toBe(9);
+    expect(res.created).toBe(1546300800);
+    expect(res.userInfo.name).toBe("Hitman");
+})
+
+
+test("test GamingSavingLoader",  async (done) => {
+    let obj = new GameSavingLoader()
+    let res = await obj.load()
+    expect(res.id).toBe(9);
+    done()
+    
 })
 
 

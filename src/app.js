@@ -1,9 +1,14 @@
-import GameSavingLoader from "./GamingSavingLoader.mjs"
-import GameSavingLoaderAsync from "./GameSavingLoaderAsync.mjs"
+import GameSavingLoader from "./GamingSavingLoader"
+import GameSavingLoaderAsync from "./GameSavingLoaderAsync"
 
 
 let gsl = new GameSavingLoader()
-gsl.load()
 
-let gsl1 = new GameSavingLoaderAsync()
-gsl1.load()
+async () => {
+    let x = await gsl.load()
+    console.log(x)
+}
+
+
+// let gsl1 = new GameSavingLoaderAsync()
+// gsl1.load()

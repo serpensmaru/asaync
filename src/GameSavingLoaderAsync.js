@@ -1,5 +1,5 @@
-import json from "./parser.mjs";
-import read from "./reader.mjs";
+import json from "./parser.js";
+import read from "./reader.js";
 
 
 export default class GameSavingLoaderAsync {
@@ -10,7 +10,6 @@ export default class GameSavingLoaderAsync {
         this.id = res2.id
         this.created = res2.created
         this.userInfo = res2.userInfo
-        console.log(this)
         return this
     }
 }

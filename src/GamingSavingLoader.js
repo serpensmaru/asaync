@@ -1,5 +1,6 @@
-import json from "./parser.mjs";
-import read from "./reader.mjs";
+import { resolve } from "core-js/fn/promise";
+import json from "./parser.js";
+import read from "./reader.js";
 
 export default class GameSavingLoader {
     load() {  
