@@ -11,12 +11,11 @@ test("test GameSavingLoaderAsync", async () => {
 })
 
 
-test("test GamingSavingLoader",  async (done) => {
-    let obj = new GameSavingLoader()
+test("test GamingSavingLoader",  async () => {
+    let obj = await new GameSavingLoader()
     let res = await obj.load()
     expect(res.id).toBe(9);
-    done()
-    
+    // done()
 })
 
 
